@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Games",
+    "dateExported": "2023-02-09T10:37:42.007Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ef824a2d-a68c-47a3-a4a4-e8d20cb0f4c7",
+            "colId": "d67f3569-c39e-4097-954f-320d42fc67dd",
+            "containerId": "",
+            "name": "Health",
+            "url": "http://localhost:5000/health",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-02-09T10:33:38.575Z",
+            "modified": "2023-02-09T10:33:38.575Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a97c5264-a067-4772-b409-0f9ddd6d37ef",
+            "colId": "d67f3569-c39e-4097-954f-320d42fc67dd",
+            "containerId": "",
+            "name": "CONSOLES",
+            "url": "http://localhost:5000/consoles",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-02-09T10:33:38.576Z",
+            "modified": "2023-02-09T10:34:27.905Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"PlayStation\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "efde3c88-80f1-4e46-8820-b267eb8adc6b",
+            "colId": "d67f3569-c39e-4097-954f-320d42fc67dd",
+            "containerId": "",
+            "name": "GAMES",
+            "url": "http://localhost:5000/games",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-02-09T10:35:01.569Z",
+            "modified": "2023-02-09T10:35:59.815Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"The Last of Us\",\n  \"consoleId\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6226bb2a-cd39-4ef9-b5e9-59dd7453019a",
+            "colId": "d67f3569-c39e-4097-954f-320d42fc67dd",
+            "containerId": "",
+            "name": "GAMES",
+            "url": "http://localhost:5000/games",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2023-02-09T10:36:47.548Z",
+            "modified": "2023-02-09T10:37:02.195Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a9bd32b9-fbfa-44fd-b60d-7ff5858dd995",
+            "colId": "d67f3569-c39e-4097-954f-320d42fc67dd",
+            "containerId": "",
+            "name": "CONSOLES",
+            "url": "http://localhost:5000/consoles",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-02-09T10:33:38.578Z",
+            "modified": "2023-02-09T10:36:35.808Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
