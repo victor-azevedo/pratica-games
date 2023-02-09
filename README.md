@@ -27,7 +27,7 @@ npm run dev
 
 1. Follow the steps in the last section
 
-2. Configure the `.env.test` file using the `.env.test`. For more info: [Connectoions URLs](https://www.prisma.io/docs/reference/database-reference/connection-urls)
+2. Configure the `.env.test` file using the `.env.example`. For more info: [Connectoions URLs](https://www.prisma.io/docs/reference/database-reference/connection-urls)
 
 3. Run all migrations
 
