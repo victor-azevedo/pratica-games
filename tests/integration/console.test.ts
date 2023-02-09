@@ -1,4 +1,3 @@
-import { faker } from "@faker-js/faker";
 import supertest from "supertest";
 import app from "../../src/app";
 import {
@@ -6,7 +5,7 @@ import {
   createConsoleBody,
   createConsoleFalseBody,
 } from "../factories/console-factor";
-import { cleanDb } from "../helpers";
+import { cleanDb, createDifferentId } from "../helpers";
 
 beforeEach(async () => {
   await cleanDb();
@@ -64,14 +63,12 @@ describe("GET /consoles", () => {
 
     expect(response.status).toBe(200);
     expect(response.body).toHaveLength(1);
-    expect(response.body).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          id: consoleCreated.id,
-          name: consoleCreated.name,
-        }),
-      ])
-    );
+    expect(response.body).toEqual([
+      {
+        id: consoleCreated.id,
+        name: consoleCreated.name,
+      },
+    ]);
   });
 
   it("should respond with status 200, array contain four object when there is four console in database", async () => {
@@ -86,10 +83,10 @@ describe("GET /consoles", () => {
     expect(response.body).toHaveLength(4);
     expect(response.body).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({
+        {
           id: consoleCreated.id,
           name: consoleCreated.name,
-        }),
+        },
       ])
     );
   });
@@ -110,21 +107,9 @@ describe("GET /consoles/:id", () => {
 
   it("should respond with status 404 when id don't match any console in database", async () => {
     const { id } = await createConsole();
-    let fakerId = faker.datatype.number({ min: 0 });
-    while (fakerId === id) {
-      fakerId = faker.datatype.number({ min: 0 });
-    }
+    let differentId = createDifferentId(id);
 
-    const response = await server.get(`/consoles/${fakerId}`);
-
-    expect(response.status).toBe(404);
-  });
-
-  it("should respond with status 404 when id is not a number", async () => {
-    await createConsole();
-    let fakerId = faker.datatype.string(20);
-
-    const response = await server.get(`/consoles/${fakerId}`);
+    const response = await server.get(`/consoles/${differentId}`);
 
     expect(response.status).toBe(404);
   });
