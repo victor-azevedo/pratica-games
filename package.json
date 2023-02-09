@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server.ts",
-    "dev:prisma:migrate": "prisma migrate dev",
+    "dev": "dotenv -e .env.development nodemon src/server.ts",
+    "dev:prisma:migrate": "dotenv -e .env.development prisma migrate dev",
     "test": "dotenv -e .env.test jest",
     "test:prisma:migrate": "dotenv -e .env.test prisma migrate dev"
   },
