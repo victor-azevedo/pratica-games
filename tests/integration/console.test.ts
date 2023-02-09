@@ -47,8 +47,6 @@ describe("POST /consoles", () => {
 
     expect(response.status).toBe(409);
   });
-
-  it("should respond with status 409 when ...", async () => {});
 });
 
 describe("GET /consoles", () => {
